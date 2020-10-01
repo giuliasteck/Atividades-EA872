@@ -60,8 +60,8 @@ class View{
 	private:
 		const int altura = 400;
 		const int largura = 200;
-		const int x0 = altura/2;
-		const int y0 = largura/2;
+		const int x0 = largura/2;
+		const int y0 = altura/2;
 		int X, Y;
 	public:
 		View(){
@@ -98,7 +98,7 @@ class Equacoes{
 		void Aceleracao();
 		void Posicao();
 		void Velocidade();
-		void Renderizacao();
+		void Rasterizacao();
 };
 
 void Equacoes::ForcaMola(){
@@ -138,8 +138,11 @@ void Equacoes::Posicao(){
 	
 }
 
-void Equacoes::Renderizacao(){
-	//ESCREVER CÓDIGO PRA PASSAR POSIÇÃO X PRA COORDENADAS DOS PIXELS
+void Equacoes::Rasterizacao(){
+	int YPixel = d->getX() + v->getY0(); //quando ta na posicao 0, ta na posicao (100, 200)
+	v->setY(YPixel);
+	//Limitar altura e largura das posições
+	//Achar forma de traduzir sistema cartesiano pro sistema de pixel
 }
 
 int main(){
@@ -154,6 +157,7 @@ int main(){
 		e->Aceleracao();
 		e->Velocidade();
 		e->Posicao();
+		e->Rasterizacao();
 		v->imprimirCoordenadas();
 	}
 }
