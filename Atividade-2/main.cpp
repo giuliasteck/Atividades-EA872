@@ -53,27 +53,34 @@ class Dados{
 
 		float getT() {return T;}
 
-//		void imprimir(){
-//			std::cout << A << ' ' << V << ' ' << X << std::endl;
-//		}
+//		void imprimir() {std::cout << A << ' ' << V << ' ' << X << std::endl;}
 };
 
 class View{
 	private:
 		const int altura = 400;
 		const int largura = 200;
-		int x,y;
+		const int x0 = altura/2;
+		const int y0 = largura/2;
+		int X, Y;
 	public:
 		View(){
-			x = 200;
-			y = 100;
+			X = x0;
+			Y = y0;
 		}
 
-		const int getAltura(){return altura;}
-		const int getLargura(){return largura;}
-		float
-	
-}
+		void setX(int x) {X = x;}	
+		int getX() {return X;}
+		void setY(int y) {Y = y;}
+		int getY() {return Y;}
+
+		const int getAltura() {return altura;}
+		const int getLargura() {return largura;}
+		const int getX0() {return x0;}
+		const int getY0() {return y0;}
+
+		void imprimirCoordenadas() {std::cout << '(' << X << ',' << Y << ')' << std::endl;}	
+};
 
 
 class Equacoes{
@@ -83,6 +90,7 @@ class Equacoes{
 	public:
 		Equacoes(std::shared_ptr<Dados>d, std::shared_ptr<View>v){
 			this->d = d;
+			this->v = v;
 		}
 		void ForcaMola();
 		void ForcaAmortecedor();
@@ -90,6 +98,7 @@ class Equacoes{
 		void Aceleracao();
 		void Posicao();
 		void Velocidade();
+		void Renderizacao();
 };
 
 void Equacoes::ForcaMola(){
@@ -129,12 +138,12 @@ void Equacoes::Posicao(){
 	
 }
 
-void Renderizacao(){
-
+void Equacoes::Renderizacao(){
+	//ESCREVER CÓDIGO PRA PASSAR POSIÇÃO X PRA COORDENADAS DOS PIXELS
 }
 
 int main(){
-	std::shared_ptr<View>v (new Dados);
+	std::shared_ptr<View>v (new View);
 	std::shared_ptr<Dados>d (new Dados);
 	std::shared_ptr<Equacoes>e (new Equacoes(d,v));
 	
@@ -145,7 +154,7 @@ int main(){
 		e->Aceleracao();
 		e->Velocidade();
 		e->Posicao();
-		d->imprimir();
+		v->imprimirCoordenadas();
 	}
 }
 
