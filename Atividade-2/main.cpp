@@ -21,74 +21,41 @@ class Dados{
 			A = 0;
 		}
 
-		void setX(float x){
-			X = x;
-		}
+		void setX(float x) {X = x;}
 
-		float getX(){
-			return X;
-		}	
+		float getX() {return X;}	
 
-		void setV(float v){
-			V = v;
-		}
+		void setV(float v) {V = v;}
 
+		float getV() {return V;}
 
-		float getV(){
-			return V;
-		}
+		void setFm(float fm) {Fm = fm;}
 
-		void setFm(float fm){
-			Fm = fm;
-		}
+		float getFm() {return Fm;}
 
-		float getFm(){
-			return Fm;
-		}
+		void setFa(float fa) {Fa = fa;}
 
-		void setFa(float fa){
-			Fa = fa;
-		}
+		float getFa() {return Fa;}
 
-		float getFa(){
-			return Fa;
-		}
+		void setFt(float ft) {Ft = ft;}
 
-		void setFt(float ft){
-			Ft = ft;
-		}
+		float getFt() {return Ft;}
 
-		float getFt(){
-			return Ft;
-		}
+		void setA(float a) {A = a;}
 
-		void setA(float a){
-			A = a;
-		}
+		float getA() {return A;}
 
-		float getA(){
-			return A;
-		}
+		float getK() {return K;}
 
-		float getK(){
-			return K;
-		}
+		float getB() {return B;}
 
-		float getB(){
-			return B;
-		}
+		float getM() {return m;}
 
-		float getM(){
-			return m;
-		}
+		float getT() {return T;}
 
-		float getT(){
-			return T;
-		}
-
-		void imprimir(){
-			std::cout << A << ' ' << V << ' ' << X << std::endl;
-		}
+//		void imprimir(){
+//			std::cout << A << ' ' << V << ' ' << X << std::endl;
+//		}
 };
 
 class View{
@@ -160,6 +127,10 @@ void Equacoes::Posicao(){
 	X_novo = (d->getX()+d->getV()*d->getT());
 	d->setX(X_novo);
 	
+}
+
+void Renderizacao(){
+
 }
 
 int main(){
