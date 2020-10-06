@@ -6,14 +6,16 @@ class Dados{
 		const float m = 10;
 		const float K = 1;
 		const float B = 2;
-		const float x0 = 1;
+		const float x0 = 0;
+		const float y0 = 1;
 		const float v0 = 2;
 		const float T = 0.5;
 		
-		float X, V, Fm, Fa, Ft, A;
+		float  X, Y, V, Fm, Fa, Ft, A;
 	public:
 		Dados(){
 			X = x0;
+			Y = y0;
 			V = v0;
 			Fm = 0;
 			Fa = 0;
@@ -23,7 +25,11 @@ class Dados{
 
 		void setX(float x) {X = x;}
 
-		float getX() {return X;}	
+		float getX() {return X;}
+
+		void setY(float y) {Y=y;}
+
+		float getY() {return Y;}	
 
 		void setV(float v) {V = v;}
 
@@ -53,20 +59,18 @@ class Dados{
 
 		float getT() {return T;}
 
-//		void imprimir() {std::cout << A << ' ' << V << ' ' << X << std::endl;}
+	//	void imprimir() {std::cout << A << ' ' << V << ' ' << X << std::endl;}
 };
 
 class View{
 	private:
 		const int altura = 400;
 		const int largura = 200;
-		const int x0 = largura/2;
-		const int y0 = altura/2;
 		int X, Y;
 	public:
 		View(){
-			X = x0;
-			Y = y0;
+			X = 0;
+			Y = 0;
 		}
 
 		void setX(int x) {X = x;}	
@@ -76,8 +80,6 @@ class View{
 
 		const int getAltura() {return altura;}
 		const int getLargura() {return largura;}
-		const int getX0() {return x0;}
-		const int getY0() {return y0;}
 
 		void imprimirCoordenadas() {std::cout << '(' << X << ',' << Y << ')' << std::endl;}	
 };
@@ -103,7 +105,7 @@ class Equacoes{
 
 void Equacoes::ForcaMola(){
 	float Fm_novo;
-	Fm_novo = -(d->getK()*d->getX());
+	Fm_novo = -(d->getK()*d->getY());
 	d->setFm(Fm_novo);
 }
 
@@ -132,17 +134,17 @@ void Equacoes::Velocidade(){
 }
 
 void Equacoes::Posicao(){
-	float X_novo;
-	X_novo = (d->getX()+d->getV()*d->getT());
-	d->setX(X_novo);
+	float Y_novo;
+	Y_novo = (d->getY()+d->getV()*d->getT());
+	d->setY(Y_novo);
 	
 }
 
 void Equacoes::Rasterizacao(){
-	int YPixel = d->getX() + v->getY0(); //quando ta na posicao 0, ta na posicao (100, 200)
+	int YPixel = d->getY() + v->getAltura()/2;
+	int XPixel = d->getX() + v->getLargura()/2;
+	v->setX(XPixel);
 	v->setY(YPixel);
-	//Limitar altura e largura das posições
-	//Achar forma de traduzir sistema cartesiano pro sistema de pixel
 }
 
 int main(){
