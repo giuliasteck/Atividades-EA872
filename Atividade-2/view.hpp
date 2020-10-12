@@ -1,27 +1,29 @@
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+
 class View{
-        private:
-                const int altura = 400;
-                const int largura = 200;
-                int X, Y;
-		SDL_Window *window = nullptr;
-		SDL_Renderer *renderer = nullptr;
-        public:
-                View(){
-                        X = 0;
-                        Y = 0;
-                }
+    private:
+        const int altura = 400;
+        const int largura = 400;
+        SDL_Window *window = nullptr;
+        SDL_Renderer *renderer = nullptr;
+        SDL_Texture *texture = nullptr;
+        SDL_Rect target;
 
-                void setX(int x);
-                int getX();
-                void setY(int y);
-                int getY();
+    public:
+        View();
+        ~View();
 
-                const int getAltura();
-                const int getLargura();
+        void setX(int x);
+        int getX();
+        void setY(int y);
+        int getY();
+        SDL_Rect getTarget();
 
-		void CriarJanela(SDL_Window *window);
-		void Renderizar(SDL_Window *window, SDL_Renderer *renderer);
+        const int getAltura();
+        const int getLargura();
 
-                void imprimirCoordenadas();
+        void imprimirCoordenadas();
+        void draw();
 };
 
