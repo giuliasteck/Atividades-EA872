@@ -1,6 +1,7 @@
 #include <iostream>
 #include "controller.hpp"
 #include <memory>
+#include <SDL2/SDL.h>
 
 void Equacoes::ForcaMola(){
         float Fm_novo;

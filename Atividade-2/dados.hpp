@@ -9,6 +9,8 @@ class Dados{
                 const float T = 0.5;
 
                 float  X, Y, V, Fm, Fa, Ft, A;
+
+		SDL_Texture *texture;
         public:
                 Dados(){
                         X = x0;
