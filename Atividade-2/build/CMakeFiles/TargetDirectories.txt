@@ -1,0 +1,6 @@
+/home/gsteck/Documents/EA872/Atividade2/Atividade-2/build/CMakeFiles/edit_cache.dir
+/home/gsteck/Documents/EA872/Atividade2/Atividade-2/build/CMakeFiles/dados.dir
+/home/gsteck/Documents/EA872/Atividade2/Atividade-2/build/CMakeFiles/view.dir
+/home/gsteck/Documents/EA872/Atividade2/Atividade-2/build/CMakeFiles/rebuild_cache.dir
+/home/gsteck/Documents/EA872/Atividade2/Atividade-2/build/CMakeFiles/control.dir
+/home/gsteck/Documents/EA872/Atividade2/Atividade-2/build/CMakeFiles/Mola.dir

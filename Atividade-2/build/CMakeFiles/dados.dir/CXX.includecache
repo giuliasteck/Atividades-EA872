@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/gsteck/Documents/EA872/Atividade2/Atividade-2/dados.cpp
+dados.hpp
+/home/gsteck/Documents/EA872/Atividade2/Atividade-2/dados.hpp
+iostream
+-
+SDL2/SDL.h
+-
+SDL2/SDL_image.h
+-
+
+/home/gsteck/Documents/EA872/Atividade2/Atividade-2/dados.hpp
+

@@ -1,16 +1,15 @@
 class Dados{
         private:
                 const float m = 10;
-                const float K = 1;
-                const float B = 2;
+                const float K = 100;
+                const float B = .5;
                 const float x0 = 0;
                 const float y0 = 1;
-                const float v0 = 2;
-                const float T = 0.5;
+                const float v0 = 20;
+                const float T = .05;
 
                 float  X, Y, V, Fm, Fa, Ft, A;
 
-		SDL_Texture *texture;
         public:
                 Dados(){
                         X = x0;

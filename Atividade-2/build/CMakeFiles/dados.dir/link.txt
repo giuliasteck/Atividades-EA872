@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdados.a  CMakeFiles/dados.dir/dados.cpp.o
+/usr/bin/ranlib libdados.a
